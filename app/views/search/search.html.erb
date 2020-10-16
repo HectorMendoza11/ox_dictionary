@@ -1,0 +1,22 @@
+<!-- app/views/search/result.html.erb -->
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6">
+      <h4>Word info</h4>
+      <%= link_to "Back to search", request.referer.present? ? request.referer : default_path , class:'btn btn-primary' %>
+      <dl>
+        <dt>Word</dt>
+        <dd><%= @word['results'][0]['id'] %></dd>
+
+        <dt>Etymologies</dt>
+        <dd><%= @word['results'][0]['lexicalEntries'][0]['entries'][0]['etymologies'][0] %></dd>
+
+        <dt>Lexical Definition</dt>
+        <dd><%= @word['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0] %></dd>
+
+        <dt>Short Definition</dt>
+        <dd><%= @word['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['shortDefinitions'][0] %></dd>
+      </dl>
+    </div>
+  </div>
+</div>
